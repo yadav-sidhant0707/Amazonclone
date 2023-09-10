@@ -1,0 +1,93 @@
+
+DB:=>>AmazonDB
+
+
+
+
+
+create table Brand
+(
+brandId  int,
+brandNm varchar(50)
+
+);
+
+
+create table ItemCat
+ (
+catId int,
+catNm varchar(50)
+);
+[[[[	
+
+create table ItemMaster
+(
+itemId int,
+itemNm varchar(50),
+compId int,
+catId int,
+brandId int,
+itemRate int,
+itemStock varchar(50),
+itemDescr varchar(50),
+itemPhoto varchar(50)
+);
+
+create table Company 
+(
+compId int,
+compNm varchar(50),
+compAddr varchar(50),
+compPhone varchar(50),
+compEmail varchar(50),
+compCity varchar(50),
+compDescr varchar(100),
+compPassword varchar(50)
+);
+
+
+create table Customer
+(
+custId int,
+custNm varchar(50),
+custAddr varchar(50),
+custPhone varchar(50),
+custEmail varchar(50),
+custPincode varchar(50),
+custPassword varchar(50)
+);
+
+
+create table OrderMaster
+(
+orderId int,
+orderDate date,
+orderCustId int,
+orderCompId int,
+orderAmt int ,
+orderGSTAmt float,
+orderGrandTot float
+);
+
+create table  OrderDetails
+(
+orderDetId int,
+orderId int,
+ItemId int,
+itemRate int,
+itemQty int,
+itemAmt int
+
+);
+
+
+create table Payment
+(
+payId int,
+payDate date,
+orderId int,
+orderGrandTot float
+);
+
+
+===================================
